@@ -1,0 +1,92 @@
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  color: #5f5f5f;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  background-color: #efefef;
+}
+
+#list-container {
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+  align-self: center;
+  box-shadow: 1px 1px 10px 1px grey;
+  background: #fff;
+}
+
+#list-container header {
+  padding: 15px 20px;
+  position: relative;
+}
+
+#list-container header .refresh {
+  position: absolute;
+  right: 12px;
+  top: 15px;
+}
+
+#list-container input[type="text"] {
+  width: 100%;
+  padding: 15px 20px;
+  border-radius: 0;
+  border: none;
+  border-top: 1px solid #adadad;
+}
+
+#list-container input[type="text"]::placeholder {
+  font-style: italic;
+}
+
+#list-container input[type="text"]:focus {
+  outline: none;
+}
+
+ul {
+  list-style: none;
+}
+
+ul li {
+  border-top: 1px solid #adadad;
+  padding: 15px 20px;
+  display: flex;
+  gap: 15px;
+  position: relative;
+}
+
+ul li .setting {
+  position: absolute;
+  right: 12px;
+}
+
+ul li .setting:hover,
+#list-container header .refresh:hover {
+  cursor: pointer;
+}
+
+button {
+  cursor: pointer;
+  padding: 15px 10px;
+  border-radius: 0;
+  border: none;
+  border-top: 1px solid #adadad;
+}
+
+button:hover {
+  background-color: #dfdfdf;
+}
+
+button:active {
+  background-color: #d0d0d0;
+}
