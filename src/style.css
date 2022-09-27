@@ -10,7 +10,7 @@ html {
   color: #5f5f5f;
 }
 
-body{
+body {
   display: flex;
   justify-content: center;
   height: 100vh;
@@ -50,7 +50,6 @@ body{
 }
 
 #list-container input[type="text"]:focus {
-  border-color: none;
   outline: none;
 }
 
