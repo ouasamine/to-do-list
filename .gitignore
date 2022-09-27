@@ -1,6 +1,5 @@
 # .gitignore
 node_modules/
 .hintrc
-package-lock.json
 .stylelintrc.json
 .eslintrc.json
