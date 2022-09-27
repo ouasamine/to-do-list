@@ -18,18 +18,24 @@ To get a local copy up and running follow these simple example steps.
 
   - A web browser _(Chrome, Mozilla, Edge...)_.
   - Git _(optional: to clone the repository)_.
+  - npm _(or any packet manager)_
 
 ### Setup
 
-  - To clone and run this project on your local machine please follow the commands (Windows Command Line):
-  ```
-  cd PATH 
-  git clone https://github.com/ouasamine/to-do-list.git
-  cd to-do-list
-  ./dist/index.html 
-  ```
-  _(instead of PATH put yor preferred directory where the repository files will download)_
+To clone and run this project on your local machine please follow the instructions:
 
+- To clone the project on your machine:
+`git clone https://github.com/ouasamine/to-do-list.git`  
+
+- To install webpack and project dependencies _(a packet manager is required)_:
+`npm install`
+- To build project files in development mode _(the destination folder is /dist)_:
+`npm run build`
+- To build project files in production mode _(the destination folder is /dist)_:
+`npm run dist`
+- To run the project on webpack live server:
+`npm run start`
+ 
 
 ## Authors
 
