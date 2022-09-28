@@ -66,6 +66,10 @@ ul li {
   outline: none;
 }
 
+ul li:focus {
+  background-color: #d8d78d;
+}
+
 ul li .setting {
   position: absolute;
   right: 12px;
