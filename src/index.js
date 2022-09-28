@@ -8,11 +8,11 @@ import '@fortawesome/fontawesome-free/js/brands';
 const tasks = [{
   index: 0,
   desc: 'wash dishes',
-  status: false,
+  completed: false,
 }, {
   index: 1,
   desc: 'complete to do list project',
-  status: false,
+  completed: false,
 }];
 
 function displayTasks(container, tasks) {
@@ -22,9 +22,13 @@ function displayTasks(container, tasks) {
     const icon = document.createElement('span');
     icon.classList.add('setting', 'fa-solid', 'fa-ellipsis-vertical', 'fa-xl');
     checkbox.type = 'checkbox';
+    listitem.contentEditable = 'true';
     listitem.appendChild(checkbox);
     listitem.appendChild(document.createTextNode(task.desc));
     listitem.appendChild(icon);
+    listitem.addEventListener('input', () => {
+      task.desc = listitem.innerText;
+    });
     container.appendChild(listitem);
   });
 }

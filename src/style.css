@@ -63,6 +63,7 @@ ul li {
   display: flex;
   gap: 15px;
   position: relative;
+  outline: none;
 }
 
 ul li .setting {
