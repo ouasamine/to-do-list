@@ -1,5 +1,3 @@
-/* eslint-disable import/prefer-default-export */
-
 export function addToList(tasksArray, newTaskDesc) {
   const newIndex = tasksArray.length ? tasksArray.length : 0;
   tasksArray.push({

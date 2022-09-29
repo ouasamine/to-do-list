@@ -1,14 +1,15 @@
-/* eslint-disable import/no-unresolved */
 import './style.css';
-import '@fortawesome/fontawesome-free/js/fontawesome';
-import '@fortawesome/fontawesome-free/js/solid';
-import '@fortawesome/fontawesome-free/js/regular';
-import '@fortawesome/fontawesome-free/js/brands';
+import '@fortawesome/fontawesome-free/js/fontawesome.js';
+import '@fortawesome/fontawesome-free/js/solid.js';
+import '@fortawesome/fontawesome-free/js/regular.js';
+import '@fortawesome/fontawesome-free/js/brands.js';
 import { addToList, removeFromList, updateStorage } from './add-remove.js';
+import { toggleStatus } from './task-status.js';
 
 const htmlTasksContainer = document.querySelector('ul');
 const newTaskInput = document.querySelector('input');
 const inputIcon = document.querySelector('.input-icon');
+const clearCompleted = document.querySelector('#clear-complete');
 let tasks = [];
 
 function displayTasks(container) {
@@ -31,6 +32,10 @@ function displayTasks(container) {
     removeButt.classList.add('remove', 'setting');
     removeButt.appendChild(icon2);
     checkbox.type = 'checkbox';
+    if (task.completed === true) {
+      checkbox.setAttribute('checked', 'checked');
+      listitem.style.textDecoration = 'line-through';
+    }
     listitem.contentEditable = 'true';
     listitem.appendChild(checkbox);
     listitem.appendChild(document.createTextNode(task.desc));
@@ -53,10 +58,19 @@ function displayTasks(container) {
       removeButt.remove();
       e.currentTarget.appendChild(moveButt);
     });
+    checkbox.addEventListener('change', (e) => {
+      if (e.currentTarget.checked === true) {
+        listitem.style.textDecoration = 'line-through';
+      } else {
+        listitem.style.textDecoration = 'none';
+      }
+      toggleStatus(task);
+      updateStorage(tasks);
+    });
   });
 }
 
-displayTasks(htmlTasksContainer, tasks);
+displayTasks(htmlTasksContainer);
 newTaskInput.addEventListener('keydown', (e) => {
   if (e.key === 'Enter') {
     addToList(tasks, e.currentTarget.value);
@@ -69,4 +83,8 @@ inputIcon.addEventListener('click', () => {
   updateStorage(tasks);
   displayTasks(htmlTasksContainer);
 });
-
+clearCompleted.addEventListener('click', () => {
+  tasks = tasks.filter((task) => !task.completed);
+  updateStorage(tasks);
+  displayTasks(htmlTasksContainer);
+});
