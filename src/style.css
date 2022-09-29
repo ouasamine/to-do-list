@@ -37,6 +37,10 @@ body {
   top: 15px;
 }
 
+#list-container > div {
+  position: relative;
+}
+
 #list-container input[type="text"] {
   width: 100%;
   padding: 15px 20px;
@@ -51,6 +55,14 @@ body {
 
 #list-container input[type="text"]:focus {
   outline: none;
+}
+
+#list-container .input-icon {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  cursor: pointer;
+  font-size: 1.2rem;
 }
 
 ul {

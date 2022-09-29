@@ -8,6 +8,7 @@ import { addToList, removeFromList, updateStorage } from './add-remove.js';
 
 const htmlTasksContainer = document.querySelector('ul');
 const newTaskInput = document.querySelector('input');
+const inputIcon = document.querySelector('.input-icon');
 let tasks = [];
 
 function displayTasks(container) {
@@ -27,7 +28,6 @@ function displayTasks(container) {
     icon2.classList.add('fa-solid', 'fa-trash-can', 'fa-lg');
     moveButt.classList.add('move', 'setting');
     moveButt.appendChild(icon);
-    // icon.classList.replace('fa-ellipsis-vertical', 'fa-trash-can');
     removeButt.classList.add('remove', 'setting');
     removeButt.appendChild(icon2);
     checkbox.type = 'checkbox';
@@ -47,6 +47,7 @@ function displayTasks(container) {
         listitem.remove();
         removeFromList(tasks, task.index);
         updateStorage(tasks);
+        console.log(tasks);
       });
     });
     listitem.addEventListener('focusout', (e) => {
@@ -64,3 +65,10 @@ newTaskInput.addEventListener('keydown', (e) => {
     displayTasks(htmlTasksContainer);
   }
 });
+inputIcon.addEventListener('click', () => {
+  addToList(tasks, newTaskInput.value);
+  updateStorage(tasks);
+  displayTasks(htmlTasksContainer);
+});
+
+console.log(tasks);
