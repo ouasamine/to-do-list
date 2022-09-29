@@ -1,15 +1,16 @@
 /* eslint-disable import/no-unresolved */
 import './style.css';
-import '@fortawesome/fontawesome-free/js/fontawesome';
-import '@fortawesome/fontawesome-free/js/solid';
-import '@fortawesome/fontawesome-free/js/regular';
-import '@fortawesome/fontawesome-free/js/brands';
+import '@fortawesome/fontawesome-free/js/fontawesome.js';
+import '@fortawesome/fontawesome-free/js/solid.js';
+import '@fortawesome/fontawesome-free/js/regular.js';
+import '@fortawesome/fontawesome-free/js/brands.js';
 import { addToList, removeFromList, updateStorage } from './add-remove.js';
 import { toggleStatus } from './task-status.js';
 
 const htmlTasksContainer = document.querySelector('ul');
 const newTaskInput = document.querySelector('input');
 const inputIcon = document.querySelector('.input-icon');
+const clearCompleted = document.querySelector('#clear-complete');
 let tasks = [];
 
 function displayTasks(container) {
@@ -70,7 +71,7 @@ function displayTasks(container) {
   });
 }
 
-displayTasks(htmlTasksContainer, tasks);
+displayTasks(htmlTasksContainer);
 newTaskInput.addEventListener('keydown', (e) => {
   if (e.key === 'Enter') {
     addToList(tasks, e.currentTarget.value);
@@ -80,6 +81,11 @@ newTaskInput.addEventListener('keydown', (e) => {
 });
 inputIcon.addEventListener('click', () => {
   addToList(tasks, newTaskInput.value);
+  updateStorage(tasks);
+  displayTasks(htmlTasksContainer);
+});
+clearCompleted.addEventListener('click', () => {
+  tasks = tasks.filter((task) => !task.completed);
   updateStorage(tasks);
   displayTasks(htmlTasksContainer);
 });
