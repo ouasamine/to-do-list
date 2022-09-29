@@ -32,6 +32,10 @@ function displayTasks(container) {
     removeButt.classList.add('remove', 'setting');
     removeButt.appendChild(icon2);
     checkbox.type = 'checkbox';
+    if (task.completed === true) {
+      checkbox.setAttribute('checked', 'checked');
+      listitem.style.textDecoration = 'line-through';
+    }
     listitem.contentEditable = 'true';
     listitem.appendChild(checkbox);
     listitem.appendChild(document.createTextNode(task.desc));
@@ -54,8 +58,14 @@ function displayTasks(container) {
       removeButt.remove();
       e.currentTarget.appendChild(moveButt);
     });
-    checkbox.addEventListener('change', () => {
+    checkbox.addEventListener('change', (e) => {
+      if (e.currentTarget.checked === true) {
+        listitem.style.textDecoration = 'line-through';
+      } else {
+        listitem.style.textDecoration = 'none';
+      }
       toggleStatus(task);
+      updateStorage(tasks);
     });
   });
 }
