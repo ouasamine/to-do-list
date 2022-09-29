@@ -5,6 +5,7 @@ import '@fortawesome/fontawesome-free/js/solid';
 import '@fortawesome/fontawesome-free/js/regular';
 import '@fortawesome/fontawesome-free/js/brands';
 import { addToList, removeFromList, updateStorage } from './add-remove.js';
+import { toggleStatus } from './task-status.js';
 
 const htmlTasksContainer = document.querySelector('ul');
 const newTaskInput = document.querySelector('input');
@@ -53,6 +54,9 @@ function displayTasks(container) {
       removeButt.remove();
       e.currentTarget.appendChild(moveButt);
     });
+    checkbox.addEventListener('change', () => {
+      toggleStatus(task);
+    });
   });
 }
 
@@ -69,4 +73,3 @@ inputIcon.addEventListener('click', () => {
   updateStorage(tasks);
   displayTasks(htmlTasksContainer);
 });
-
