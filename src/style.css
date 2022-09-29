@@ -102,12 +102,13 @@ button {
   border-radius: 0;
   border: none;
   border-top: 1px solid #adadad;
-}
-
-button:hover {
   background-color: #dfdfdf;
 }
 
+button:hover {
+  background-color: #d4d4d4;
+}
+
 button:active {
-  background-color: #d0d0d0;
+  background-color: #c0c0c0;
 }
