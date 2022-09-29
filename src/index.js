@@ -47,7 +47,6 @@ function displayTasks(container) {
         listitem.remove();
         removeFromList(tasks, task.index);
         updateStorage(tasks);
-        console.log(tasks);
       });
     });
     listitem.addEventListener('focusout', (e) => {
@@ -71,4 +70,3 @@ inputIcon.addEventListener('click', () => {
   displayTasks(htmlTasksContainer);
 });
 
-console.log(tasks);
