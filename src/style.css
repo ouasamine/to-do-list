@@ -33,8 +33,12 @@ body {
 
 #list-container header .refresh {
   position: absolute;
-  right: 12px;
+  right: 8px;
   top: 15px;
+}
+
+#list-container > div {
+  position: relative;
 }
 
 #list-container input[type="text"] {
@@ -53,6 +57,14 @@ body {
   outline: none;
 }
 
+#list-container .input-icon {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
 ul {
   list-style: none;
 }
@@ -63,11 +75,20 @@ ul li {
   display: flex;
   gap: 15px;
   position: relative;
+  outline: none;
+}
+
+ul li:focus {
+  background-color: #d8d78d;
 }
 
 ul li .setting {
   position: absolute;
   right: 12px;
+}
+
+ul li .remove {
+  right: 6px;
 }
 
 ul li .setting:hover,
