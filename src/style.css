@@ -37,6 +37,10 @@ body {
   top: 15px;
 }
 
+#list-container > div {
+  position: relative;
+}
+
 #list-container input[type="text"] {
   width: 100%;
   padding: 15px 20px;
@@ -53,6 +57,14 @@ body {
   outline: none;
 }
 
+#list-container .input-icon {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
 ul {
   list-style: none;
 }
@@ -63,6 +75,11 @@ ul li {
   display: flex;
   gap: 15px;
   position: relative;
+  outline: none;
+}
+
+ul li:focus {
+  background-color: #d8d78d;
 }
 
 ul li .setting {
