@@ -9,6 +9,7 @@
 
 - Html/Css
 - Javascript (ES6)
+- Webpack
 
 ## Getting Started
 
@@ -36,6 +37,9 @@ To clone and run this project on your local machine please follow the instructio
 - To run the project on webpack live server:
 `npm run start`
  
+## Live Demo 
+
+Check [this live version](https://ouasamine.github.io/to-do-list/) of the project.
 
 ## Authors
 
