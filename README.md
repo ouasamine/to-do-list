@@ -23,19 +23,14 @@ To get a local copy up and running follow these simple example steps.
 
 ### Setup
 
-To clone and run this project on your local machine please follow the instructions:
+  To clone and run this project on your local machine please Fork the project files from this repository on your machine then on your bash run the following commands inside the project directory: 
 
-- To clone the project on your machine:
-`git clone https://github.com/ouasamine/to-do-list.git`  
+1. Run `npm install` To install webpack and project dependencies _(A packet manager is required)_.
 
-- To install webpack and project dependencies _(a packet manager is required)_:
-`npm install`
-- To build project files in development mode _(the destination folder is /dist)_:
-`npm run build`
-- To build project files in production mode _(the destination folder is /dist)_:
-`npm run dist`
-- To run the project on webpack live server:
-`npm run start`
+2. Run `npm run build` To build project files in development mode **OR** `npm run dist` To build project files in production mode _(The destination folder is `/dist`)_.
+
+3. To open the project you can either open the `index.html` inside the `/dist` folder **OR** run `npm run start` To run the project on webpack live server.
+
  
 ## Live Demo 
 
